@@ -1,5 +1,8 @@
 module.exports = {
-    purge: { content: ["./index.html", "./src/**/*.svelte"] },
+    purge: {
+        content: ["./index.html", "./src/**/*.svelte"],
+        disabled: process.env.NODE_ENV && process.env.NODE_ENV === "dev",
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         colors: {

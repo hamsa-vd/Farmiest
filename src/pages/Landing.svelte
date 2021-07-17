@@ -3,6 +3,7 @@
     import Hero from "../../public/images/Hero.png";
     import LandingOfferItems from "../utilities/LandingOfferItems.svelte";
     import { landingOffers } from "../store";
+    import { GithubIcon } from "svelte-feather-icons";
 </script>
 
 <div class="p-10 px-16 landing-root relative">
@@ -37,6 +38,13 @@
             <LandingOfferItems {...landingOfferItem} />
         {/each}
     </div>
+    <a
+        href="https://github.com/hamsa-vd/Farmiest"
+        target="_blank"
+        class="github-link"
+    >
+        <GithubIcon size="36" class="z-50" />
+    </a>
 </div>
 
 <style lang="scss">
@@ -82,6 +90,36 @@
             right: 8rem;
             box-shadow: 0px 1px 30px rgba(36, 38, 43, 0.233);
             border-radius: 5px;
+        }
+    }
+    a.github-link {
+        position: fixed;
+        display: grid;
+        place-items: center;
+        bottom: 3rem;
+        right: 3rem;
+        padding: 1.5em 1.5em;
+        color: white;
+        z-index: 49;
+        animation: git-anim 1.5s cubic-bezier(0.63, 0.41, 0.68, 1.15) forwards;
+        background: linear-gradient(91.06deg, #008000 0.91%, #ffd700 97.81%);
+        border-radius: 50%;
+        box-shadow: inset 0px 0px 1em rgba(0, 0, 0, 0.178);
+        &:hover {
+            cursor: pointer;
+            box-shadow: inset 1px 2px 1em rgba(0, 0, 0, 0.459);
+        }
+    }
+    @keyframes git-anim {
+        0% {
+            transform: scale(2);
+            bottom: 50%;
+            right: 50%;
+        }
+        100% {
+            transform: scale(1);
+            bottom: 3rem;
+            right: 3rem;
         }
     }
 </style>
